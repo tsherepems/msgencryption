@@ -26,7 +26,7 @@ def encrypt():
         base64bytes=base64.b64encode(encryptmsg)
         encrypt = base64bytes.decode("ascii")
 
-        Label(screen1,text="Text Is Encrypted\n Copy the text to Decrypt",font="impack 10 bold").place(x=5,y=6)
+        Label(screen1,text="Text Is Encrypted\n",font="impack 10 bold").place(x=5,y=6)
         text2=Text(screen1,font="30",bd=4,wrap=WORD)
         text2.place(x=2,y=30,width=390,height=180)
         text2.insert(END,encrypt)
@@ -42,14 +42,14 @@ def decrypt():
          screen2.configure(bg="cyan")
 
          message=text1.get(1.0,END)
-         encryptmsg=message.encode("ascii")
-         base64bytes=base64.b64decode(encryptmsg)
-         encrypt = base64bytes.decode("ascii")
+         decryptmsg=message.encode("ascii")
+         base64bytes=base64.b64decode(decryptmsg)
+         decrypt = base64bytes.decode("ascii")
 
          Label(screen2,text="Text Is Decrypted",font="impack 10 bold").place(x=5,y=6)
          text2=Text(screen2,font="30",bd=4,wrap=WORD)
          text2.place(x=2,y=30,width=390,height=180)
-         text2.insert(END,encrypt)
+         text2.insert(END,decrypt)
     elif(password==""):
         messagebox.showerror("Error","Please enter the password")   
     elif(password!=password1):
@@ -64,7 +64,7 @@ def cls():
 
 
 Label(screen,text="This Is Encryption & Decryption Program.\n Enter The Message To Be Encrypted",font="impack 12 bold",bg="white").place(x=25,y=1,)
-#text to be encrypted
+
 text1=Text(screen,font="20")
 text1.place(x=5,y=45,width=400,height=120)
 #label
